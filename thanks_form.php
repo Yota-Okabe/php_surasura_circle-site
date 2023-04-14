@@ -2,14 +2,21 @@
     $name = $_POST['name'];
     $email = $_POST['email'];
     $gender = $_POST['gender'];
-    $date = $_POST['date'];    
+    $date = $_POST['date'];
     $content = $_POST['content'];
     $detail = $_POST['detail'];
 
+    $dsn = 'mysql:dbname=tennis-circle;host=localhost';
+    $user = 'root';
+    $password='';
+    $dbh = new PDO($dsn, $user, $password);
+    $dbh->query('SET NAMES utf8');
 
-    
-
+    $sql = 'INSERT INTO `inquiry_form`(`name`, `email`, `gender`, `date`, `content`, `detail`) VALUES ("'.$name.'", "'.$email.'", "'.$gender.'", "'.$date.'", "'.$content.'", "'.$detail.'")';
+    $stmt = $dbh->prepare($sql);
+    $stmt->execute();
 ?>
+
 <!DOCTYPE html>
 <html lang="ja">
 <head>

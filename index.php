@@ -1,6 +1,4 @@
-<?php
-    $fp = fopen("info.txt", "r");
-?>
+
 <!DOCTYPE html>
 <html lang="ja">
 <head>
@@ -17,6 +15,7 @@
         <div>
             <h1>お知らせ</h1>
             <?php
+                $fp = fopen("info.txt", "r");
                 if ($fp) {
                     $title = trim(fgets($fp));
                     if ($title) {
