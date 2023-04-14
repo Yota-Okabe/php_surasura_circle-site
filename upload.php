@@ -5,7 +5,8 @@
     if (isset($_FILES['image']) && is_uploaded_file($_FILES['image']['tmp_name'])) {
         $old_name = $_FILES['image']['tmp_name'];
         $new_name = $_FILES['image']['name'];
-        if (move_uploaded_file($old_name, 'img' . $new_name)) {
+        // var_dump($new_name);
+        if (move_uploaded_file($old_name, 'img/' . $new_name)) {
             $msg = 'アップロードしました';
             $alert = 'success';
         }else {
@@ -13,7 +14,7 @@
             $alert = 'danger';
         }
     }
-    print_r($_FILES);
+
 ?>
 
 <!DOCTYPE html>
@@ -35,7 +36,7 @@
                     echo '<div class="alert alert-' . $alert . '" role="alert">' . $msg . '</div>';
                 }
             ?>
-            <form action="upload.php" method="POST" enctype="multipart/form-data">
+            <form action="upload.php" method="post" enctype="multipart/form-data">
                 <div class="form-group">
                     <label>アップロードファイル</label><br>
                     <input type="file" name="image" class="form-control-file">
