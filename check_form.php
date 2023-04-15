@@ -65,23 +65,25 @@
 <body>
     <?php include('navbar.php'); ?>
     <main role="main" class="container">
-        <h3>お問い合わせ内容をご確認ください</h3>
-        <p>お名前：<?php echo $name; ?> </p>
-        <p>メールアドレス：<?php echo $email; ?> </p>
-        <p>性別：<?php echo $gender; ?> </p>
-        <p>日付：<?php echo $date; ?> </p>
-        <p>内容：<?php echo $content; ?> </p>
-        <p>詳細：<?php echo $detail; ?> </p>
+        <div>
+            <h3>お問い合わせ内容をご確認ください</h3>
+            <p>お名前：<?php echo $name; ?> </p>
+            <p>メールアドレス：<?php echo $email; ?> </p>
+            <p>性別：<?php echo $gender; ?> </p>
+            <p>日付：<?php echo $date; ?> </p>
+            <p>内容：<?php echo $content; ?> </p>
+            <p>詳細：<?php echo $detail; ?> </p>
 
-        <form action="thanks_form.php" method="post">
-            <input type="hidden" name="name" value="<?php echo $name; ?>">
-            <input type="hidden" name="email" value="<?php echo $email; ?>">
-            <input type="hidden" name="gender" value="<?php echo $gender; ?>">
-            <input type="hidden" name="date" value="<?php echo $date; ?>">
-            <input type="hidden" name="content" value="<?php echo $content; ?>">
-            <input type="hidden" name="detail" value="<?php echo $detail; ?>">
-            <input type="submit" value="OK">
-        </form>
+            <form action="thanks_form.php" method="post">
+                <input type="hidden" name="name" value="<?php echo $name; ?>">
+                <input type="hidden" name="email" value="<?php echo $email; ?>">
+                <input type="hidden" name="gender" value="<?php echo $gender; ?>">
+                <input type="hidden" name="date" value="<?php echo $date; ?>">
+                <input type="hidden" name="content" value="<?php echo $content; ?>">
+                <input type="hidden" name="detail" value="<?php echo $detail; ?>">
+                <input type="submit" value="OK">
+            </form>
+        </div>
     </main>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
 </body>

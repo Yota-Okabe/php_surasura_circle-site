@@ -10,37 +10,40 @@
 <body>
     <?php include('navbar.php'); ?>
     <main role="main" class="container">
-    <h3>お問い合わせフォーム</h3>
-    <form action="check_form.php" method="post">
-        <p>お名前：
-            <input type="text" name="name">
-        </p>
-        <p>メールアドレス：
-            <input type="email" name="email">
-        </p>
-        <p>性別：
-            <input type="radio" name="gender" value="man">男性
-            <input type="radio" name="gender" value="woman">女性
-        </p>
-        <p>日付：
-            <input type="date" name="date">
-        </p>
-        <p> 内容：
-            <select name="content">
-                <option value="0"></option>
-                <option value="1">試合について</option>
-                <option value="2">練習について</option>
-                <option value="3">打ち合わせについて</option>
-                <option value="4">飲み会について</option>
-                <option value="5">その他</option>
-            </select>
-        </p>
-        <p>詳細</p>
-        <p>
-            <textarea name="detail" id="" cols="30" rows="10"></textarea>
-        </p>
-        <input type="submit" value="送信">
-    </form>
+        <div>
+            <h3>お問い合わせフォーム</h3>
+            <form action="check_form.php" method="post">
+                <p>お名前：
+                    <input type="text" name="name">
+                </p>
+                <p>メールアドレス：
+                    <input type="email" name="email">
+                </p>
+                <p>性別：
+                    <input type="radio" name="gender" value="man">男性
+                    <input type="radio" name="gender" value="woman">女性
+                </p>
+                <p>日付：
+                    <input type="date" name="date">
+                </p>
+                <p> 内容：
+                    <select name="content">
+                        <option value="0"></option>
+                        <option value="1">試合について</option>
+                        <option value="2">練習について</option>
+                        <option value="3">打ち合わせについて</option>
+                        <option value="4">飲み会について</option>
+                        <option value="5">その他</option>
+                    </select>
+                </p>
+                <p>詳細</p>
+                <p>
+                    <textarea name="detail" id="" cols="30" rows="10"></textarea>
+                </p>
+                <input type="submit" value="送信">
+            </form>
+        </div>
+    </main>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
 </body>
 </html>

@@ -10,30 +10,32 @@
 <body>
     <?php include('navbar.php'); ?>
     <main role="main" class="container">
-    <h3>アンケートフォーム</h3>
-    <form action="form_post.php" method="post">
-        <p>お名前：
-            <input type="text" name="name">
-        </p>
-        <p>性別：
-            <input type="radio" name="gender" value="man">男性
-            <input type="radio" name="gender" value="woman">女性
-        </p>
-        <p> 評価：
-            <select name="star">
-                <option value="1">★☆☆☆☆</option>
-                <option value="2">★★☆☆☆</option>
-                <option value="3">★★★☆☆</option>
-                <option value="4">★★★★☆</option>
-                <option value="5">★★★★★</option>
-            </select>
-        </p>
-        <p>ご意見</p>
-        <p>
-            <textarea name="other" id="" cols="30" rows="10"></textarea>
-        </p>
-        <input type="submit" value="送信">
-    </form>
+        <div>
+            <h3>アンケートフォーム</h3>
+            <form action="form_post.php" method="post">
+                <p>お名前：
+                    <input type="text" name="name">
+                </p>
+                <p>性別：
+                    <input type="radio" name="gender" value="man">男性
+                    <input type="radio" name="gender" value="woman">女性
+                </p>
+                <p> 評価：
+                    <select name="star">
+                        <option value="1">★☆☆☆☆</option>
+                        <option value="2">★★☆☆☆</option>
+                        <option value="3">★★★☆☆</option>
+                        <option value="4">★★★★☆</option>
+                        <option value="5">★★★★★</option>
+                    </select>
+                </p>
+                <p>ご意見</p>
+                <p>
+                    <textarea name="other" id="" cols="30" rows="10"></textarea>
+                </p>
+                <input type="submit" value="送信">
+            </form>
+        </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
 </body>
 </html>

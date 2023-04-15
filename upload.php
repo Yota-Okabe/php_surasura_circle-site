@@ -44,6 +44,7 @@
     <?php include('navbar.php'); ?>
     <main role="main" class="container">
     <!-- <main role="main" class="container" style="padding:60px 15px"> -->
+        <div>
             <h3>画像アップロード</h3>
             <?php 
                 if ($msg) {
@@ -57,6 +58,7 @@
                 </div>
                 <input type="submit" value="アップロードする" class="btn btn-primary">
             </form>
+        </div>
     </main>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
 </body>
