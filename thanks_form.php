@@ -29,7 +29,7 @@
 <body>
     <?php include('navbar.php'); ?>
     <main role="main" class="container">
-        <h2>お問い合わせ内容</h2>
+        <h3>お問い合わせ内容</h3>
         <p>お名前：<?php echo $name; ?> </p>
         <p>メールアドレス：<?php echo $email; ?> </p>
         <p>性別：<?php echo $gender; ?> </p>

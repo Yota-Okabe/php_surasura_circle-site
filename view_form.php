@@ -28,7 +28,7 @@
     <?php include('navbar.php'); ?>
     <main role="main" class="container">
     <!-- <main role="main" class="container" style="padding:60px 15px"> -->
-        <h1>お問い合わせ一覧</h1>
+        <h3>お問い合わせ一覧</h3>
         <?php
         foreach ($records as $record) {
         echo $record['id'] . "<br>";

@@ -10,7 +10,7 @@
 <body>
     <?php include('navbar.php'); ?>
     <main role="main" class="container">
-    <h1>アンケートフォーム</h1>
+    <h3>アンケートフォーム</h3>
     <form action="form_post.php" method="post">
         <p>お名前：
             <input type="text" name="name">

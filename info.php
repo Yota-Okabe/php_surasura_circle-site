@@ -24,11 +24,11 @@
 <body>
     <?php include('navbar.php'); ?>
     <main role="main" class="container">
-    <h1>お知らせ詳細</h1>
+    <h3>お知らせ詳細</h3>
     <?php
         foreach ($line as $i => $text) {
             if ($i==0) {
-                echo '<h3>' . $text . '</h3>';
+                echo '<h5>' . $text . '</h5>';
             }else {
                 $body .= $text . '<br>';
             }
@@ -48,6 +48,7 @@
         // }
         echo '<p>' . $body . '</p>';
     ?>
+    </main>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
 </body>
 </html>

@@ -39,11 +39,12 @@
 <body>
     <?php include('navbar.php'); ?>
     <main role="main" class="container">
-    <h1>アンケート結果</h1>
+    <h3>アンケート結果</h3>
     <p>お名前：<?php echo $name; ?> </p>
     <p>性別：<?php echo $gender; ?> </p>
     <p>評価：<?php echo $star; ?> </p>
     <p>ご意見：<?php echo $other; ?> </p>
+    </main>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
 </body>
 </html>

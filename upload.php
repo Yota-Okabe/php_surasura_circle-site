@@ -4,8 +4,22 @@
 
     if (isset($_FILES['image']) && is_uploaded_file($_FILES['image']['tmp_name'])) {
         $old_name = $_FILES['image']['tmp_name'];
-        $new_name = $_FILES['image']['name'];
-        // var_dump($new_name);
+        // $new_name = $_FILES['image']['name'];
+        $new_name = date("YmdHis");
+        $new_name .= mt_rand();
+        $size = getimagesize($_FILES['image']['tmp_name']);
+        switch ($size[2]) {
+            case IMAGETYPE_JPEG:
+                $new_name .= '.jpg';
+                break;
+            case IMAGETYPE_GIF:
+                $new_name .= '.gif';
+            case IMAGETYPE_PNG:
+                $new_name .= '.png';
+            default:
+                header('Location: upload.php');
+                exit();
+        }
         if (move_uploaded_file($old_name, 'img/' . $new_name)) {
             $msg = 'アップロードしました';
             $alert = 'success';
@@ -30,7 +44,7 @@
     <?php include('navbar.php'); ?>
     <main role="main" class="container">
     <!-- <main role="main" class="container" style="padding:60px 15px"> -->
-            <h1>画像アップロード</h1>
+            <h3>画像アップロード</h3>
             <?php 
                 if ($msg) {
                     echo '<div class="alert alert-' . $alert . '" role="alert">' . $msg . '</div>';

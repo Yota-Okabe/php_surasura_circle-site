@@ -13,7 +13,7 @@
     <main role="main" class="container">
     <!-- <main role="main" class="container" style="padding:60px 15px"> -->
         <div>
-            <h1>お知らせ</h1>
+            <h3>お知らせ</h3>
             <?php
                 $fp = fopen("info.txt", "r");
                 if ($fp) {
