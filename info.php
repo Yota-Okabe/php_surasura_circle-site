@@ -24,30 +24,32 @@
 <body>
     <?php include('navbar.php'); ?>
     <main role="main" class="container">
-    <h3>お知らせ詳細</h3>
-    <?php
-        foreach ($line as $i => $text) {
-            if ($i==0) {
-                echo '<h5>' . $text . '</h5>';
-            }else {
-                $body .= $text . '<br>';
-            }
-        }
+        <div>
+            <h3>お知らせ詳細</h3>
+            <?php
+                foreach ($line as $i => $text) {
+                    if ($i==0) {
+                        echo '<h5>' . $text . '</h5>';
+                    }else {
+                        $body .= $text . '<br>';
+                    }
+                }
 
-        // if (count($line) > 0) {
-        //     for ($i=0; $i < count($line) ; $i++) { 
-        //         if ($i == 0) {
-        //             echo '<h3>' . $line[0] . '</h3>';
-        //         }else {
-        //             $body .= $line[$i] . '<br>';
-        //         }
-                    
-        //     }
-        // }else {
-        //     $body = 'お知らせはありません';
-        // }
-        echo '<p>' . $body . '</p>';
-    ?>
+                // if (count($line) > 0) {
+                //     for ($i=0; $i < count($line) ; $i++) { 
+                //         if ($i == 0) {
+                //             echo '<h3>' . $line[0] . '</h3>';
+                //         }else {
+                //             $body .= $line[$i] . '<br>';
+                //         }
+                            
+                //     }
+                // }else {
+                //     $body = 'お知らせはありません';
+                // }
+                echo '<p>' . $body . '</p>';
+            ?>
+        </div>
     </main>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
 </body>

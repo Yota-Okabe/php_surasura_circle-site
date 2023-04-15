@@ -1,6 +1,7 @@
 <?php
 
     $images = array();
+    $num = 4;
     if ($handle = opendir('./img')) {
         while ($entry = readdir($handle)) {
             if ($entry != "." && $entry != "..") {
@@ -9,7 +10,7 @@
         }
         closedir($handle);
     }
-    // var_dump($images);
+
 ?>
 
 <!DOCTYPE html>
@@ -25,23 +26,42 @@
     <?php include('navbar.php'); ?>
     <main role="main" class="container">
     <!-- <main role="main" class="container" style="padding:60px 15px"> -->
-        <h3>アルバム</h3>
-        <?php
-            if (count($images) > 0) {
-                echo '<div class="row">';
-                foreach ($images as $img) {
-                    echo '<div class="col-3">';
-                    echo '  <div class="card">';
-                    echo '      <a href=./img/'.$img.'"target="_blank">
-                                <img src="./img/'.$img.'"class="img-fluid"></a>';
-                    echo '  </div>';
+        <div>
+            <h3>アルバム</h3>
+            <?php
+                if (count($images) > 0) {
+                    echo '<div class="row">';
+
+                    $images = array_chunk($images, $num);
+                    $page = 1;
+
+                    if (isset($_GET['page']) && is_numeric($_GET['page'])) {
+                        $page = intval($_GET['page']);
+                        if (!isset($images[$page-1])) {
+                            $page = 1;
+                        }
+                    
+                    }
+
+                    foreach ($images[$page-1] as $img) {
+                        echo '<div class="col-3">';
+                        echo '  <div class="card">';
+                        echo '      <a href=./img/'.$img.'"target="_blank">
+                                    <img src="./img/'.$img.'"class="img-fluid"></a>';
+                        echo '  </div>';
+                        echo '</div>';
+                    }
                     echo '</div>';
+                    echo '<nav><ul class="pagination">';
+                    for ($i=1; $i<=count($images) ; $i++) { 
+                        echo '<li class="page-item"><a class"page-link" href="album.php?page='.$i.'">' .$i. '</a></li>';
+                    }
+                    echo '</ul></nav>';
+                }else {
+                    echo '<div class="alert alert-dark" role="alert">画像はありません</div>';
                 }
-                echo '</div>';
-            }else {
-                echo '<div class="alert alert-dark" role="alert">画像はありません</div>';
-            }
-        ?>
+            ?>
+        </div>
     </main>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
 </body>

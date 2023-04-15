@@ -28,18 +28,20 @@
     <?php include('navbar.php'); ?>
     <main role="main" class="container">
     <!-- <main role="main" class="container" style="padding:60px 15px"> -->
-        <h3>お問い合わせ一覧</h3>
-        <?php
-        foreach ($records as $record) {
-        echo $record['id'] . "<br>";
-        echo $record['name'] . "<br>";
-        echo $record['email'] . "<br>";
-        echo $record['gender'] . "<br>";
-        echo $record['date'] . "<br>";
-        echo $record['content'] . "<br>";
-        echo $record['detail'] . "<br><hr>";
-        }
-        ?>
+        <div>
+            <h3>お問い合わせ一覧</h3>
+            <?php
+            foreach ($records as $record) {
+            echo $record['id'] . "<br>";
+            echo $record['name'] . "<br>";
+            echo $record['email'] . "<br>";
+            echo $record['gender'] . "<br>";
+            echo $record['date'] . "<br>";
+            echo $record['content'] . "<br>";
+            echo $record['detail'] . "<br><hr>";
+            }
+            ?>
+        </div>
     </main>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
 </body>
