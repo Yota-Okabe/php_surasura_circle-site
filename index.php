@@ -1,3 +1,7 @@
+<?php 
+    include 'includes/login.php';
+    $fp = fopen("info.txt", "r");
+?>
 
 <!DOCTYPE html>
 <html lang="ja">
@@ -15,7 +19,6 @@
         <div>
             <h3>お知らせ</h3>
             <?php
-                $fp = fopen("info.txt", "r");
                 if ($fp) {
                     $title = trim(fgets($fp));
                     if ($title) {

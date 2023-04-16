@@ -1,4 +1,5 @@
 <?php
+    include 'includes/login.php';
     $name = $_POST['name'];
     $title = $_POST['title'];
     $body = $_POST['body'];
@@ -17,6 +18,8 @@
     if (!preg_match("/^[0-9]{4}$/", $pass)) {
         exit();
     }
+
+    setcookie('name', $name, time() + 40*60*24*30);
 
 
     $dsn = 'mysql:dbname=tennis-circle;host=localhost';
