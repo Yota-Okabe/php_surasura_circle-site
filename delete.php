@@ -2,6 +2,12 @@
     include 'includes/login.php';
     $id = intval($_POST['id']);
     $pass = $_POST['pass'];
+    $token = $_POST['token'];
+
+    if ($token != hash("sha256", session_id())) {
+        header('Location: bbs.php');
+        exit();
+    }
 
     if ($id == '' || $pass == '') {
         header('Location: bbs.php');

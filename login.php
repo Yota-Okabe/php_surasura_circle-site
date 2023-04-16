@@ -18,6 +18,7 @@
             $stmt->execute();
 
             if ($row = $stmt->fetch()) {
+                session_regenerate_id(true);
                 $_SESSION['id'] = $row['id'];
                 header('Location: index.php');
                 exit();
