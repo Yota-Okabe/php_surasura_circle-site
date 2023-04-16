@@ -1,5 +1,5 @@
 <?php
-
+    include 'includes/login.php';
     $images = array();
     $num = 4;
     if ($handle = opendir('./img')) {
@@ -46,7 +46,7 @@
                     foreach ($images[$page-1] as $img) {
                         echo '<div class="col-3">';
                         echo '  <div class="card">';
-                        echo '      <a href=./img/'.$img.'"target="_blank"><img src="./img/'.$img.'"class="img-fluid"></a>';
+                        echo '      <a href="./img/'.$img.'" target="_blank"><img src="./img/'.$img.'"class="img-fluid"></a>';
                         echo '  </div>';
                         echo '</div>';
                         // var_dump($img);

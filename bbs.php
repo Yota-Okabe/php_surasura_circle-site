@@ -1,6 +1,12 @@
 <?php 
+    include 'includes/login.php';
+    if (isset($_COOKIE['name'])) {
+        $name = $_COOKIE['name'];
+    }else {
+        $name = "";
+    }
 
-    $num = 10;
+    $num = 5;
     
     $dsn = 'mysql:dbname=tennis-circle;host=localhost';
     $user = 'root';
@@ -47,7 +53,7 @@
                 </div>
                 <div class="form-group">
                     <label>名前</label>
-                    <input type="text" name="name" class="form-control">
+                    <input type="text" name="name" class="form-control" value="<?php echo $name ?>">
                 </div>
                 <div class="form-group">
                     <textarea name="body" cols="30" rows="10" class="form-control"></textarea>
