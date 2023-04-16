@@ -66,7 +66,7 @@
     <main role="main" class="container">
         <div>
             <form action="login.php" method="post">
-                <h3>サークルサイトへログイン</h3>
+                <h3>ログイン</h3>
                 <label class="sr-only"></label>
                 <input type="text" name="name" id="name" class="form-control" placeholder="ユーザ名">
                 <label class="sr-only"></label>
