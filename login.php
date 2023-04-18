@@ -12,7 +12,9 @@
             $db = new PDO($dsn, $user, $password);
             $db->setAttribute(PDO::ATTR_EMULATE_PREPARES, false);
             $stmt = $db->prepare("
-                SELECT * FROM users WHERE name=:name AND password=:pass");
+                SELECT users.id, users.name AS login_name, profiles.name 
+                FROM users, profiles
+                WHERE users.id=profiles.id AND users.name=:name AND users.password=:pass");
             $stmt->bindParam(':name', $_POST['name'], PDO::PARAM_STR);
             $stmt->bindParam(':pass', hash("sha256", $_POST['password']), PDO::PARAM_STR);
             $stmt->execute();
@@ -20,6 +22,7 @@
             if ($row = $stmt->fetch()) {
                 session_regenerate_id(true);
                 $_SESSION['id'] = $row['id'];
+                $_SESSION['name'] = $row['name'];
                 header('Location: index.php');
                 exit();
             }else {

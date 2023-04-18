@@ -17,6 +17,7 @@
     <main role="main" class="container">
     <!-- <main role="main" class="container" style="padding:60px 15px"> -->
         <div>
+            <p>ログイン中のユーザ：<?php echo $_SESSION['name'] ?> </p>
             <h3>お知らせ</h3>
             <?php
                 if ($fp) {
