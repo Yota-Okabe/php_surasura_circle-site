@@ -74,7 +74,7 @@
             <p>内容：<?php echo $content; ?> </p>
             <p>詳細：<?php echo $detail; ?> </p>
 
-            <form action="thanks_form.php" method="post">
+            <form action="z_thanks_form.php" method="post">
                 <input type="hidden" name="name" value="<?php echo $name; ?>">
                 <input type="hidden" name="email" value="<?php echo $email; ?>">
                 <input type="hidden" name="gender" value="<?php echo $gender; ?>">

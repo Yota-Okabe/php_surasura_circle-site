@@ -12,7 +12,7 @@
     <main role="main" class="container">
         <div>
             <h3>お問い合わせフォーム</h3>
-            <form action="check_form.php" method="post">
+            <form action="z_check_form.php" method="post">
                 <p>お名前：
                     <input type="text" name="name">
                 </p>
